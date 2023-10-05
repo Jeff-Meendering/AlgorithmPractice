@@ -4,27 +4,12 @@
 int euclidsAlgorithm(int m, int n) {
     int r;
     while (true) {
-        // E1
         r = m % n;
-
-        //E2
         if (r == 0) {
             return n;
-
-            //E3
         } else {
             m = n;
             n = r;
-
-            //Proof that m is always greater than n at the beginning of step E1
-            //Except possibly the first time this step occurs
-            bool temp = m > n;
-            if (temp == true) {
-                printf("m > n\n");
-            } else {
-                printf("n > m\n");
-            }
-            
         }
     }
 }
