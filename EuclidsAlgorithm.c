@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+//Algorithm E
 int euclidsAlgorithm(int m, int n) {
     int r;
     while (true) {
@@ -29,6 +30,20 @@ int euclidsAlgorithm(int m, int n) {
     }
 }
 
+//Algorithm F
+int algorithmF(int m, int n) {
+    while (true) {
+        m = m % n;
+        if (m == 0) {
+            return n;
+        }
+        n = n % m;
+        if (n == 0){
+            return m;
+        }
+    }
+}
+
 int main() {
     int m, n;
 
@@ -39,7 +54,11 @@ int main() {
     scanf("%d", &n);
 
     int output = euclidsAlgorithm(m, n);
+    int output2 = algorithmF(m, n);
 
-    printf("Euclids Algorithm output: %d", output);
+    printf("Euclids Algorithm output: %d\n", output);
+    
+    printf("Algorithm F output: %d", output2);
+
     return 0;
 }
